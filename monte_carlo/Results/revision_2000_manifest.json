@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-18",
+  "replications_per_configuration": 2000,
+  "critical_value_calibration_replications": 50000,
+  "files": {
+    "sim_size.csv": {
+      "sha256": "5bbfcbb9d109b027527718e0418654eed1e8480cf4a758775998b75fd9cdce46",
+      "rows": 108
+    },
+    "sim_power.csv": {
+      "sha256": "4a74876f40a7e102df172d64922768025cbc2dc22accb264f40658ed26a54ab3",
+      "rows": 270
+    },
+    "sim_classification.csv": {
+      "sha256": "05c03ad26c30b0b54880f437b4ea5953334d004dfc1eb7bc98a97280afa073a0",
+      "rows": 54
+    },
+    "sim_omega.csv": {
+      "sha256": "bf4493963f108bd2f4d19c185974c2e91cc1b2911ce7596534dd32d8d9b60ea3",
+      "rows": 36
+    },
+    "sim_supplement.csv": {
+      "sha256": "bb80a9d8df6048b93c7d7da5936af455ce4cfab86f76fdc4f1e45d34f07810f2",
+      "rows": 46
+    },
+    "sim_robust.csv": {
+      "sha256": "2780c94c4381a0d3779f7872a3b8fb143158f31e539c94003e08c2597a83d7f8",
+      "rows": 22
+    },
+    "sim_factor_dgp.csv": {
+      "sha256": "b3bbe178bed362c6401e9587b95ca54d589144aeafc2c8ab1e410cfad8475196",
+      "rows": 60
+    },
+    "sim_multibreak.csv": {
+      "sha256": "5c1e31e21982ea7992e4e12950db8c7dd4b65e2402703b50ce343147e47be634",
+      "rows": 18
+    },
+    "sim_benchmark.csv": {
+      "sha256": "d532587e060331095a50c47176528927d558d95e7bec778679d77596db645fdd",
+      "rows": 39
+    },
+    "sim_method_comparison.csv": {
+      "sha256": "982a46d4a2c0e59067cbe7e61a32cdee1f8e535f1ee07ef96cdb2108fde35f55",
+      "rows": 48
+    },
+    "sim_sa8.csv": {
+      "sha256": "36922ddf60ab6be8dcec459664d3c094b0f34150f61464d10cee06ec750d8166",
+      "rows": 17
+    },
+    "sim_sa8_classification.json": {
+      "sha256": "4b045da31b8b4e751ac0e73d170a1290f0d303c5fdb5e62b45db68a49c5730fd"
+    },
+    "critical_values_d11.json": {
+      "sha256": "c415b2b89b3cc26e4f02dbcc23d68ef0b8001497423d954275b11114e19b3796"
+    }
+  }
+}
+
