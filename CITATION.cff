@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Replication code for Detecting and Attributing Structural Breaks in Paired High-Dimensional and Scalar Processes"
+message: "If you use this code, please cite the associated Journal of Business & Economic Statistics manuscript."
+authors:
+  - family-names: Zhan
+    given-names: Yaosong
+repository-code: "https://github.com/yaosong-zhan/jbes-replication-code"
+url: "https://github.com/yaosong-zhan/jbes-replication-code"
+
