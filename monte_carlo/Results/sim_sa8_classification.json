@@ -1,0 +1,134 @@
+{
+  "classif_ar": {
+    "T": 2000,
+    "dim": 11,
+    "snr": 2.0,
+    "n_reps": 2000,
+    "confusion_matrix": {
+      "shape-driven": {
+        "shape-driven": 2000,
+        "price-driven": 0,
+        "joint": 0
+      },
+      "price-driven": {
+        "shape-driven": 0,
+        "price-driven": 2000,
+        "joint": 0
+      },
+      "joint": {
+        "shape-driven": 0,
+        "price-driven": 0,
+        "joint": 2000
+      }
+    },
+    "mean_omega_mu": {
+      "shape-driven": 0.9881130737637757,
+      "price-driven": 0.014583534191453945,
+      "joint": 0.5000131793315238
+    },
+    "detection_rate": {
+      "shape-driven": 1.0,
+      "price-driven": 1.0,
+      "joint": 1.0
+    },
+    "uncond_success": {
+      "shape-driven": 1.0,
+      "price-driven": 1.0,
+      "joint": 1.0
+    },
+    "acc_shape-driven": 1.0,
+    "n_shape-driven": 2000,
+    "acc_price-driven": 1.0,
+    "n_price-driven": 2000,
+    "acc_joint": 1.0,
+    "n_joint": 2000
+  },
+  "raw_l2_500": {
+    "T": 500,
+    "dim": 11,
+    "snr": 0.1,
+    "n_reps": 2000,
+    "confusion_matrix": {
+      "shape-driven": {
+        "shape-driven": 1522,
+        "price-driven": 0,
+        "joint": 1
+      },
+      "price-driven": {
+        "shape-driven": 102,
+        "price-driven": 59,
+        "joint": 203
+      },
+      "joint": {
+        "shape-driven": 1726,
+        "price-driven": 0,
+        "joint": 40
+      }
+    },
+    "mean_omega_mu": {
+      "shape-driven": 0.9055435007324882,
+      "price-driven": 0.5305757924255349,
+      "joint": 0.7751923566293559
+    },
+    "detection_rate": {
+      "shape-driven": 0.7615,
+      "price-driven": 0.182,
+      "joint": 0.883
+    },
+    "uncond_success": {
+      "shape-driven": 0.761,
+      "price-driven": 0.0295,
+      "joint": 0.02
+    },
+    "acc_shape-driven": 0.9993434011818779,
+    "n_shape-driven": 1523,
+    "acc_price-driven": 0.1620879120879121,
+    "n_price-driven": 364,
+    "acc_joint": 0.022650056625141562,
+    "n_joint": 1766
+  },
+  "raw_l2_1000": {
+    "T": 1000,
+    "dim": 11,
+    "snr": 0.1,
+    "n_reps": 2000,
+    "confusion_matrix": {
+      "shape-driven": {
+        "shape-driven": 1989,
+        "price-driven": 0,
+        "joint": 0
+      },
+      "price-driven": {
+        "shape-driven": 102,
+        "price-driven": 243,
+        "joint": 611
+      },
+      "joint": {
+        "shape-driven": 1988,
+        "price-driven": 0,
+        "joint": 12
+      }
+    },
+    "mean_omega_mu": {
+      "shape-driven": 0.9270447776607746,
+      "price-driven": 0.47203162283698186,
+      "joint": 0.7660494427696813
+    },
+    "detection_rate": {
+      "shape-driven": 0.9945,
+      "price-driven": 0.478,
+      "joint": 1.0
+    },
+    "uncond_success": {
+      "shape-driven": 0.9945,
+      "price-driven": 0.1215,
+      "joint": 0.006
+    },
+    "acc_shape-driven": 1.0,
+    "n_shape-driven": 1989,
+    "acc_price-driven": 0.25418410041841005,
+    "n_price-driven": 956,
+    "acc_joint": 0.006,
+    "n_joint": 2000
+  }
+}
