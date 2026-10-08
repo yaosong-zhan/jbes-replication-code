@@ -1,9 +1,12 @@
 """Find a joint-break example with a visible raw mid-price move over the
 卤5-snapshot window used in the break-examples figure (螖胃 pipeline)."""
-import json, numpy as np, pandas as pd, zipfile, io, sys
+import json, numpy as np, pandas as pd, zipfile, io, sys, os
 from datetime import date
 
-with open('Script/Results/Earnings_BreakDetails.json', 'r') as f:
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_ROOT = os.environ.get('JBES_DATA_ROOT')
+with open(os.path.join(SCRIPT_DIR, 'Results', 'Earnings_BreakDetails.json'), 'r') as f:
     det = json.load(f)
 cands = [b for b in det if b['break_type'] == 'joint'
          and 0.44 <= b['omega_mu'] <= 0.55 and abs(b['delta_price']) >= 0.15]
@@ -12,8 +15,11 @@ cands.sort(key=lambda b: (0 if b['stock'].startswith('688') else 1,
                           b['calendar_date']))
 
 def load(stock_code, date_val, exchange):
+    if not DATA_ROOT:
+        raise RuntimeError('Set JBES_DATA_ROOT to the local directory containing licensed tick data.')
     year = date_val.year
-    zip_path = f'E:/Work/DataTick/{year}/{year}{date_val.month:02d}{exchange}鑲＄エ浜旀。鍒嗙瑪.zip'
+    zip_name = f'{year}{date_val.month:02d}{exchange}股票五档分笔.zip'
+    zip_path = os.path.join(DATA_ROOT, str(year), zip_name)
     ds = date_val.strftime('%Y%m%d')
     try:
         with zipfile.ZipFile(zip_path, 'r') as z:

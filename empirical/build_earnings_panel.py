@@ -13,13 +13,15 @@ from collections import defaultdict, Counter
 warnings.filterwarnings('ignore')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_dir = os.path.dirname(script_dir)
 sys.path.insert(0, script_dir)
+sys.path.insert(0, os.path.join(repo_dir, 'monte_carlo'))
 from simulation_joint_change import run_full_pipeline
 
 RESULTS_DIR = os.path.join(script_dir, 'Results')
 REPORT_DATA_PATH = os.path.join(script_dir, '..', 'Data', 'ReportDate.csv')
 TRADING_DATES_PATH = os.path.join(script_dir, '..', 'Data', 'trading_dates.csv')
-DATA_ROOT = r'E:\Work\DataTick'
+DATA_ROOT = os.environ.get('JBES_DATA_ROOT')
 ALPHA = 0.05
 
 
@@ -48,9 +50,11 @@ def get_window_dates(trading_dates, event_date, n_before=5, n_after=5):
 
 def find_zip_for_date(date, exchange='SH'):
     """Find the monthly zip archive for a given date and exchange."""
+    if not DATA_ROOT:
+        raise RuntimeError('Set JBES_DATA_ROOT to the local directory containing licensed tick data.')
     year = date.year
     month = f'{year}{date.month:02d}'
-    zip_name = f'{month}{exchange}鑲＄エ浜旀。鍒嗙瑪.zip'
+    zip_name = f'{month}{exchange}股票五档分笔.zip'
     zip_path = os.path.join(DATA_ROOT, str(year), zip_name)
     if os.path.exists(zip_path):
         return zip_path

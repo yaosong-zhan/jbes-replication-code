@@ -10,16 +10,18 @@ warnings.filterwarnings('ignore')
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-DATA_ROOT = r'E:\Work\DataTick'
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_ROOT = os.environ.get('JBES_DATA_ROOT')
 PANEL_PATH = os.path.join(SCRIPT_DIR, 'Results', 'Earnings_Panel.csv')
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, 'Results')
-os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 def load_stock_day(stock_code, date_val, exchange='SH'):
+    if not DATA_ROOT:
+        raise RuntimeError('Set JBES_DATA_ROOT to the local directory containing licensed tick data.')
     year = date_val.year
     month = f'{date_val.year}{date_val.month:02d}'
-    zip_name = f'{month}{exchange}鑲＄エ浜旀。鍒嗙瑪.zip'
+    zip_name = f'{month}{exchange}股票五档分笔.zip'
     zip_path = os.path.join(DATA_ROOT, str(year), zip_name)
     if not os.path.exists(zip_path):
         return None
@@ -188,6 +190,7 @@ def main(max_days=3000):
 
     if len(df_merged) > 0:
         # Save
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
         out_path = os.path.join(OUTPUT_DIR, 'earnings_alt_measures.csv')
         df_merged.to_csv(out_path, index=False)
         print(f"Saved to {out_path}")

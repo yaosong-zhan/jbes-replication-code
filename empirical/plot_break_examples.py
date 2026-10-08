@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 from datetime import date
 
 warnings.filterwarnings('ignore')
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-DATA_ROOT = r'E:\Work\DataTick'
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
+DATA_ROOT = os.environ.get('JBES_DATA_ROOT')
 FIG_DIR = os.path.join(SCRIPT_DIR, 'Figures')
 os.makedirs(FIG_DIR, exist_ok=True)
 
@@ -19,9 +20,11 @@ TICK_SIZE = 0.01
 
 
 def load_stock_day(stock_code, date_val, exchange='SH'):
+    if not DATA_ROOT:
+        raise RuntimeError('Set JBES_DATA_ROOT to the local directory containing licensed tick data.')
     year = date_val.year
     month = f'{date_val.year}{date_val.month:02d}'
-    zip_name = f'{month}{exchange}鑲＄エ浜旀。鍒嗙瑪.zip'
+    zip_name = f'{month}{exchange}股票五档分笔.zip'
     zip_path = os.path.join(DATA_ROOT, str(year), zip_name)
     if not os.path.exists(zip_path):
         return None
