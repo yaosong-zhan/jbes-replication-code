@@ -26,8 +26,6 @@ The delivered result files are in `monte_carlo/Results/`; `revision_2000_manifes
 
 The empirical scripts require licensed tick-level limit-order-book snapshots, earnings-report dates from RESSET, and a compatible trading calendar. Those data are not included because the providers prohibit redistribution. Before running the empirical pipeline, set JBES_DATA_ROOT to a local directory outside this repository. Keep licensed tick-level data there and do not commit it; the remaining empirical scripts consume the generated panel and result files.
 
-Monthly archives must be named YYYYMM{SH|SZ}股票五档分笔.zip inside the corresponding YYYY/ folder. The RESSET report-date file and trading calendar remain at Data/ReportDate.csv and Data/trading_dates.csv.
-
 Run the data-free empirical startup and archive-path smoke test with: `python -m unittest discover -s tests -v`. The test creates a temporary synthetic archive and does not read proprietary inputs.
 
 The main steps are:
